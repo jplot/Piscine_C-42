@@ -1,0 +1,5 @@
+Credentials cache: API:D1BEFABE-E840-4879-BB0B-BD827A3BA39D
+        Principal: jpucelle@42.FR
+
+  Issued                Expires               Principal
+Jul  2 22:31:43 2014  Jul  9 22:31:04 2014  krbtgt/42.FR@42.FR
