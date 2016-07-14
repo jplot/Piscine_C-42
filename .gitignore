@@ -4,6 +4,9 @@
 *.obj
 *.elf
 
+# Temp files
+*.swp
+
 # Libraries
 *.lib
 *.a
