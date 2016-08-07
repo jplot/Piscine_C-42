@@ -11,24 +11,25 @@
 /* ************************************************************************** */
 
 #include "ft_list.h"
+#include "ft_string.h"
 
-t_list	*ft_create_elem(char *str)
+t_list	*jp_create_elem(char *str)
 {
 	t_list *tmp;
 
 	if ((tmp = malloc(sizeof(t_list))) == NULL)
 		return (NULL);
-	ft_strcpy(tmp->str, str);
+	jp_strcpy(tmp->str, str);
 	tmp->next = NULL;
 	return (tmp);
 }
 
-void	ft_list_push_back(t_list **begin_list, char *str)
+void	jp_list_push_back(t_list **begin_list, char *str)
 {
 	t_list *tmp;
 	t_list *l;
 
-	tmp = ft_create_elem(str);
+	tmp = jp_create_elem(str);
 	if (begin_list == NULL)
 		*begin_list = tmp;
 	else
@@ -40,7 +41,7 @@ void	ft_list_push_back(t_list **begin_list, char *str)
 	}
 }
 
-int		ft_list_size(t_list **begin_list)
+int		jp_list_size(t_list **begin_list)
 {
 	int		i;
 	t_list	*ptr;

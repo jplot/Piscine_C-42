@@ -12,22 +12,21 @@
 
 #include "main.h"
 
-char	*ft_ltos(int len, t_list *list)
+char	*jp_ltos(int len, t_list *list)
 {
 	char	*str;
-	char	*tmp;
 
 	if ((str = (char *)malloc(sizeof(char *) * (len + 1))) == NULL)
 		return (NULL);
 	while (list != NULL)
 	{
-		ft_strcat(str, list->str);
+		jp_strcat(str, list->str);
 		list = list->next;
 	}
 	return (str);
 }
 
-char	*ft_read_standard(void)
+char	*jp_read_standard(void)
 {
 	t_list	*list;
 	int		pos;
@@ -40,14 +39,14 @@ char	*ft_read_standard(void)
 		buff[pos] = '\0';
 		len += pos + 1;
 		if (list == NULL)
-			list = ft_create_elem(buff);
+			list = jp_create_elem(buff);
 		else
-			ft_list_push_back(&list, buff);
+			jp_list_push_back(&list, buff);
 	}
-	return (ft_ltos(len, list));
+	return (jp_ltos(len, list));
 }
 
-char	*ft_openfile(char *filename)
+char	*jp_openfile(char *filename)
 {
 	t_list	*list;
 	int		fh;
@@ -61,23 +60,23 @@ char	*ft_openfile(char *filename)
 	while ((pos = read(fh, &buff, 4096)))
 	{
 		buff[pos] = '\0';
-		ft_putstr(buff);
+		jp_putstr(buff);
 		len += pos + 1;
 		if (list == NULL)
-			list = ft_create_elem(buff);
+			list = jp_create_elem(buff);
 		else
-			ft_list_push_back(&list, buff);
+			jp_list_push_back(&list, buff);
 	}
 	close(fh);
-	return (ft_ltos(len, list));
+	return (jp_ltos(len, list));
 }
 
-void	ft_check(char *str)
+void	jp_check(char *str)
 {
 	if (str == NULL || *str == '\0')
-		ft_puterr("map error\n");
+		jp_puterr("map error\n");
 	if (bsq(str) == 0)
-		ft_puterr("map error\n");
+		jp_puterr("map error\n");
 }
 
 int		main(int argc, char **argv)
@@ -85,9 +84,9 @@ int		main(int argc, char **argv)
 	if (argc > 1)
 		while (*++argv != '\0')
 		{
-			ft_check(ft_openfile(*argv));
+			jp_check(jp_openfile(*argv));
 		}
 	else
-		ft_check(ft_read_standard());
+		jp_check(jp_read_standard());
 	return (0);
 }

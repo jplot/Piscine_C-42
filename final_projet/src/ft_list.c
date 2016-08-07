@@ -12,23 +12,23 @@
 
 #include "ft_list.h"
 
-t_list	*ft_create_elem(char *str)
+t_list	*jp_create_elem(char *str)
 {
 	t_list *tmp;
 
 	if ((tmp = malloc(sizeof(t_list))) == NULL)
 		return (NULL);
-	ft_strcpy(tmp->str, str);
+	jp_strcpy(tmp->str, str);
 	tmp->next = NULL;
 	return (tmp);
 }
 
-void	ft_list_push_back(t_list **begin_list, char *str)
+void	jp_list_push_back(t_list **begin_list, char *str)
 {
 	t_list *tmp;
 	t_list *elem;
 
-	elem = ft_create_elem(str);
+	elem = jp_create_elem(str);
 	if (begin_list == NULL)
 		*begin_list = elem;
 	else

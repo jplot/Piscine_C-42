@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2main.h                                            :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpucelle <jpucelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,8 +16,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-int		ft_display_file(char *filename);
+void	jp_putchar(char c);
+void	jp_putstr(char *str);
+int		jp_display_file(char *filename);
 
 #endif

@@ -12,13 +12,12 @@
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-LDFLAGS = 
+LDFLAGS =
 NAME = bsq
-_SRC = ft_list.c ft_string.c ft_print.c main.c
+_SRC = ft_list.c ft_square.c ft_string.c ft_print.c main.c
 SRC = $(patsubst %, src/%, $(_SRC))
 _OBJ = $(_SRC:.c=.o)
 OBJ = $(patsubst %, obj/%, $(_OBJ))
-OBJ = $(_OBJ)
 INC = inc/
 
 all: $(NAME)
@@ -26,10 +25,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(LDFLAGS) -o $@ $^
 
-%.o: %.c
-	echo $@
-	echo $<
-#	$(CC) $(CFLAGS) -c $< -o $@ -I $(INC)
+obj/%.o: src/%.c
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(INC)
 
 clean:
 	rm -f $(OBJ)

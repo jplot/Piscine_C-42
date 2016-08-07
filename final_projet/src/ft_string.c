@@ -12,7 +12,7 @@
 
 #include "ft_string.h"
 
-int		ft_strlen(char *str)
+int		jp_strlen(char *str)
 {
 	int i;
 
@@ -22,7 +22,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strcpy(char *dest, char *src)
+char	*jp_strcpy(char *dest, char *src)
 {
 	while (*src != '\0')
 		*dest++ = *src++;
@@ -30,8 +30,8 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*jp_strcat(char *dest, char *src)
 {
-	ft_strcpy(&dest[ft_strlen(dest)], src);
+	jp_strcpy(&dest[jp_strlen(dest)], src);
 	return (dest);
 }

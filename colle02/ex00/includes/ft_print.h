@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINT_H
-# define FT_PRINT_H
+#ifndef JP_PRINT_H
+# define JP_PRINT_H
 
 # include <unistd.h>
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_show(int nb, int arg1, int arg2, int test);
-int		ft_test_tab(int *tab);
+void	jp_putchar(char c);
+void	jp_putstr(char *str);
+void	jp_show(int nb, int arg1, int arg2, int test);
+int		jp_test_tab(int *tab);
 
 #endif

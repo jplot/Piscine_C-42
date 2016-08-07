@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2main.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpucelle <jpucelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,18 @@
 
 #include "main.h"
 
-void	ft_putchar(char c)
+void	jp_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	jp_putstr(char *str)
 {
 	while (*str != '\0')
-		ft_putchar(*str++);
+		jp_putchar(*str++);
 }
 
-int		ft_display_file(char *filename)
+int		jp_display_file(char *filename)
 {
 	int		fh;
 	char	buf[129];
@@ -34,7 +34,7 @@ int		ft_display_file(char *filename)
 	while ((len = read(fh, buf, 128)))
 	{
 		buf[len] = '\0';
-		ft_putstr(buf);
+		jp_putstr(buf);
 	}
 	close(fh);
 	return (0);
@@ -44,21 +44,21 @@ int		main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		if (ft_display_file(argv[1]) == 1)
+		if (jp_display_file(argv[1]) == 1)
 		{
-			ft_putstr("An read error occurred\n");
+			jp_putstr("An read error occurred\n");
 			return (1);
 		}
 		return (0);
 	}
 	else if (argc > 2)
 	{
-		ft_putstr("Too many arguments.\n");
+		jp_putstr("Too many arguments.\n");
 		return (1);
 	}
 	else
 	{
-		ft_putstr("File name missing.\n");
+		jp_putstr("File name missing.\n");
 		return (1);
 	}
 }

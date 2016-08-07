@@ -12,7 +12,7 @@
 
 #include "main.h"
 
-char	*ft_check(char *str, char *cha)
+char	*jp_check(char *str, char *cha)
 {
 	int		tab[4];
 
@@ -40,7 +40,7 @@ char	*ft_check(char *str, char *cha)
 	return (cha);
 }
 
-int		*ft_get_size(char *str)
+int		*jp_get_size(char *str)
 {
 	int		i;
 	int		j;
@@ -62,7 +62,7 @@ int		*ft_get_size(char *str)
 	return (size);
 }
 
-void	ft_print_result(char *str)
+void	jp_print_result(char *str)
 {
 	int		*ret[5];
 	int		*size;
@@ -73,20 +73,20 @@ void	ft_print_result(char *str)
 	ret[2] = 0;
 	ret[3] = 0;
 	ret[4] = 0;
-	size = ft_get_size(str);
+	size = jp_get_size(str);
 	if ((cha = (char *)malloc(sizeof(char) * 6)) != NULL)
 	{
-		cha = ft_check(str, cha);
-		if ((ret[0] = ft_colle00(str, cha)) == 1)
-			ft_show(0, size[1], size[0], ft_test_tab(ret));
-		if ((ret[1] = ft_colle01(str, cha)) == 1)
-			ft_show(1, size[1], size[0], ft_test_tab(ret));
-		if ((ret[2] = ft_colle02(str, cha)) == 1)
-			ft_show(2, size[1], size[0], ft_test_tab(ret));
-		if ((ret[3] = ft_colle03(str, cha)) == 1)
-			ft_show(3, size[1], size[0], ft_test_tab(ret));
-		if ((ret[4] = ft_colle04(str, cha)) == 1)
-			ft_show(4, size[1], size[0], ft_test_tab(ret));
+		cha = jp_check(str, cha);
+		if ((ret[0] = jp_colle00(str, cha)) == 1)
+			jp_show(0, size[1], size[0], jp_test_tab(ret));
+		if ((ret[1] = jp_colle01(str, cha)) == 1)
+			jp_show(1, size[1], size[0], jp_test_tab(ret));
+		if ((ret[2] = jp_colle02(str, cha)) == 1)
+			jp_show(2, size[1], size[0], jp_test_tab(ret));
+		if ((ret[3] = jp_colle03(str, cha)) == 1)
+			jp_show(3, size[1], size[0], jp_test_tab(ret));
+		if ((ret[4] = jp_colle04(str, cha)) == 1)
+			jp_show(4, size[1], size[0], jp_test_tab(ret));
 	}
 }
 
@@ -104,16 +104,16 @@ int		main(void)
 		buff[pos] = '\0';
 		len += pos + 1;
 		if (list == NULL)
-			list = ft_create_elem(buff);
+			list = jp_create_elem(buff);
 		else
-			ft_list_push_back(&list, buff);
+			jp_list_push_back(&list, buff);
 	}
 	str = (char *)malloc(sizeof(char) * len);
 	while (list != NULL)
 	{
-		ft_strcat(str, list->str);
+		jp_strcat(str, list->str);
 		list = list->next;
 	}
-	ft_print_result(str);
+	jp_print_result(str);
 	return (0);
 }

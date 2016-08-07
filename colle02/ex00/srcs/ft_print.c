@@ -10,12 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
+# include <unistd.h>
+
+void	jp_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	jp_putstr(char *str)
 {
 	while (*str != '\0')
 	{
@@ -24,20 +26,20 @@ void	ft_putstr(char *str)
 	}
 }
 
-void	ft_show(int nb, int arg1, int arg2, int test)
+void	jp_show(int nb, int arg1, int arg2, int test)
 {
 	if (test == 1)
-		ft_putstr(" || ");
-	ft_putstr("[colle-0");
-	ft_putchar(nb + '0');
-	ft_putstr("] [");
-	ft_putchar(arg1 + '0');
-	ft_putstr("] [");
-	ft_putchar(arg2 + '0');
-	ft_putstr("]\n");
+		jp_putstr(" || ");
+	jp_putstr("[colle-0");
+	jp_putchar(nb + '0');
+	jp_putstr("] [");
+	jp_putchar(arg1 + '0');
+	jp_putstr("] [");
+	jp_putchar(arg2 + '0');
+	jp_putstr("]\n");
 }
 
-int		ft_test_tab(int *tab)
+int		jp_test_tab(int *tab)
 {
 	int i;
 

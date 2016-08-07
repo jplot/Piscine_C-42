@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2main.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpucelle <jpucelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,18 @@
 
 #include "main.h"
 
-void	ft_putchar(char c)
+void	jp_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	jp_putstr(char *str)
 {
 	while (*str != '\0')
-		ft_putchar(*str++);
+		jp_putchar(*str++);
 }
 
-int		ft_cat(char *filename)
+int		jp_cat(char *filename)
 {
 	int		fh;
 	char	buf[129];
@@ -34,22 +34,22 @@ int		ft_cat(char *filename)
 	while ((len = read(fh, buf, 128)))
 	{
 		buf[len] = '\0';
-		ft_putstr(buf);
+		jp_putstr(buf);
 	}
 	close(fh);
 	return (0);
 }
 
-void	ft_puterr(char *name, char *file, int no)
+void	jp_puterr(char *name, char *file, int no)
 {
 	if (no != 0)
 	{
-		ft_putstr(name);
-		ft_putstr(": ");
-		ft_putstr(file);
-		ft_putstr(": ");
+		jp_putstr(name);
+		jp_putstr(": ");
+		jp_putstr(file);
+		jp_putstr(": ");
 		if (no == ENOENT)
-			ft_putstr("No such file or directory\n");
+			jp_putstr("No such file or directory\n");
 	}
 }
 
@@ -62,14 +62,14 @@ int		main(int argc, char *argv[])
 	{
 		while (argv[i])
 		{
-			ft_puterr(argv[0], argv[i], ft_cat(argv[i]));
+			jp_puterr(argv[0], argv[i], jp_cat(argv[i]));
 			i++;
 		}
 		return (0);
 	}
 	else
 	{
-		ft_putchar('\\');
+		jp_putchar('\\');
 		return (1);
 	}
 }

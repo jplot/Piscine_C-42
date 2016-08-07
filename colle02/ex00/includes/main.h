@@ -14,12 +14,13 @@
 # define MAIN_H
 
 # include <unistd.h>
-# include <stdlib.h>
-# include <stdio.h>
 # include "ft_list.h"
+# include "ft_string.h"
+# include "ft_colle.h"
+# include "ft_print.h"
 
-char	*ft_check(char *str, char *cha);
-void	ft_print_result(char *str);
-int		*ft_get_size(char *str);
+char	*jp_check(char *str, char *cha);
+void	jp_print_result(char *str);
+int		*jp_get_size(char *str);
 
 #endif

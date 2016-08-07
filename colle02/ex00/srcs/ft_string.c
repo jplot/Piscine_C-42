@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
-
-char	*ft_strcpy(char *dest, char *src)
+char	*jp_strcpy(char *dest, char *src)
 {
 	while (*src != '\0')
 		*dest++ = *src++;
@@ -20,7 +18,7 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*jp_strcat(char *dest, char *src)
 {
 	while (*dest != '\0')
 		dest++;

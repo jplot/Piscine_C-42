@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-int			ft_strlen(char *str)
+int			jp_strlen(char *str)
 {
 	int l;
 
@@ -27,7 +27,7 @@ char		*ft_strdup(char *src)
 	int		i;
 	char	*cpy;
 
-	i = ft_strlen(src);
+	i = jp_strlen(src);
 	if ((cpy = malloc(sizeof(*src) * (i + 1))) == NULL)
 		return (NULL);
 	while (i >= 0)

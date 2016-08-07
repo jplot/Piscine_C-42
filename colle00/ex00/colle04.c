@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+int		jp_putchar(char c);
 void	jp_hd_ft(char d, char m, char f, int l);
 
 void	colle(int x, int y)
@@ -41,15 +41,15 @@ void	jp_hd_ft(char d, char m, char f, int l)
 	int i;
 
 	i = 0;
-	ft_putchar(d);
+	jp_putchar(d);
 	while (i < (l - 2))
 	{
-		ft_putchar(m);
+		jp_putchar(m);
 		i++;
 	}
 	if (l > 1)
 	{
-		ft_putchar(f);
+		jp_putchar(f);
 	}
-	ft_putchar('\n');
+	jp_putchar('\n');
 }

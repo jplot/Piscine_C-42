@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIST_H
-# define FT_LIST_H
+#ifndef JP_LIST_H
+# define JP_LIST_H
 
 # include <stdlib.h>
 
@@ -21,8 +21,8 @@ typedef	struct		s_list
 	char			str[129];
 }					t_list;
 
-t_list				*ft_create_elem(char *str);
-void				ft_list_push_back(t_list **begin_list, char *str);
-int					ft_list_size(t_list **begin_list);
+t_list				*jp_create_elem(char *str);
+void				jp_list_push_back(t_list **begin_list, char *str);
+int					jp_list_size(t_list **begin_list);
 
 #endif

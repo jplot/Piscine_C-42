@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STRING_H
-# define FT_STRING_H
+#ifndef JP_STRING_H
+# define JP_STRING_H
 
-char	*ft_strcpy(char *dest, char *src);
-char	*ft_strcat(char *dest, char *src);
+char	*jp_strcpy(char *dest, char *src);
+char	*jp_strcat(char *dest, char *src);
 
 #endif

@@ -24,3 +24,6 @@
 *.i*86
 *.x86_64
 *.hex
+
+# File system
+.DS_Store

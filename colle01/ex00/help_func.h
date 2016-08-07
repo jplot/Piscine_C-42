@@ -12,8 +12,8 @@
 
 #include <unistd.h>
 
-int			ft_parse_sudoku_table(int pos[9][9], char **argv);
+int			jp_parse_sudoku_table(int pos[9][9], char **argv);
 
-int			ft_print_sudoku(int pos[9][9]);
+int			jp_print_sudoku(int pos[9][9]);
 
-void		ft_set_pos(int *pos, int *orig, int i, int check);
+void		jp_set_pos(int *pos, int *orig, int i, int check);

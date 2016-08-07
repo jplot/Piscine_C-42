@@ -18,7 +18,7 @@ int			ft_putchar(char c)
 
 int			jp_atoi(const char *str)
 {
-	
+
 }
 
 void		jp_line(char b, char m, char e, int l, int s)
@@ -43,7 +43,7 @@ void		jp_line(char b, char m, char e, int l, int s)
 	ft_putchar('\n');
 }
 
-void		sastantua(int size)
+void		jp_sastantua(int size)
 {
 	int i[2];
 	int lastsize;
@@ -60,19 +60,19 @@ void		sastantua(int size)
 			jp_line('/', '*', '\\', lastsize + lvl, lastsize * i[1]);
 			lastsize += 2;
 			i[1]++;
-		}	
+		}
 		lvl += 4;
 		if ((i[0]) % 2 != 0)
 		{
 			lvl += 2;
 		}
 		i[0]++;
-	}	
+	}
 }
 
 int			main(int argc, char *argv[])
 {
 	if (argc > 0)
-		sastantua(6);//argv[0] + '0');
+		jp_sastantua(6);//argv[0] + '0');
 	return (0);
 }

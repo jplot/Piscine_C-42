@@ -12,13 +12,13 @@
 
 #include <unistd.h>
 
-int			ft_parse_sudoku_table(int pos[9][9], char **argv);
+int			jp_parse_sudoku_table(int pos[9][9], char **argv);
 
-int			ft_print_sudoku(int pos[9][9]);
+int			jp_print_sudoku(int pos[9][9]);
 
-void		ft_set_pos(int *pos, int *orig, int i, int check);
+void		jp_set_pos(int *pos, int *orig, int i, int check);
 
-int			ft_check_square(int pos[9][9], int x, int y, int nbr)
+int			jp_check_square(int pos[9][9], int x, int y, int nbr)
 {
 	int		xmin;
 	int		xmax;
@@ -44,7 +44,7 @@ int			ft_check_square(int pos[9][9], int x, int y, int nbr)
 	return (1);
 }
 
-int			ft_check_pos(int pos[9][9], int x, int y, int nbr)
+int			jp_check_pos(int pos[9][9], int x, int y, int nbr)
 {
 	int		i;
 
@@ -62,13 +62,13 @@ int			ft_check_pos(int pos[9][9], int x, int y, int nbr)
 			return (0);
 		i++;
 	}
-	i = ft_check_square(pos, x, y, nbr);
+	i = jp_check_square(pos, x, y, nbr);
 	return (i);
 }
 
-void		ft_put_last_nr(int pos[9][9], int nr, int *check)
+void		jp_put_last_nr(int pos[9][9], int nr, int *check)
 {
-	if (ft_check_pos(pos, 8, 8, nr))
+	if (jp_check_pos(pos, 8, 8, nr))
 	{
 		if (pos[8][8] == 0)
 			pos[8][8] = nr;
@@ -76,7 +76,7 @@ void		ft_put_last_nr(int pos[9][9], int nr, int *check)
 	}
 }
 
-void		ft_solve(int pos[9][9], int val, int orig[9][9], int *check)
+void		jp_solve(int pos[9][9], int val, int orig[9][9], int *check)
 {
 	int		i;
 	int		x;
@@ -85,21 +85,21 @@ void		ft_solve(int pos[9][9], int val, int orig[9][9], int *check)
 	x = val % 9;
 	y = val / 9;
 	if (pos[y][x] != 0 && (x != 8 || y != 8) && *check < 2)
-		ft_solve(pos, val + 1, orig, check);
+		jp_solve(pos, val + 1, orig, check);
 	i = 1;
 	while (i < 10 && *check < 2)
 	{
 		if (x != 8 || y != 8)
 		{
-			if (ft_check_pos(pos, x, y, i) && pos[y][x] == 0)
+			if (jp_check_pos(pos, x, y, i) && pos[y][x] == 0)
 			{
-				ft_set_pos(&pos[y][x], &orig[y][x], i, *check);
-				ft_solve(pos, val + 1, orig, check);
+				jp_set_pos(&pos[y][x], &orig[y][x], i, *check);
+				jp_solve(pos, val + 1, orig, check);
 				pos[y][x] = 0;
 			}
 		}
 		else
-			ft_put_last_nr(orig, i, check);
+			jp_put_last_nr(orig, i, check);
 		i++;
 	}
 }
@@ -115,12 +115,12 @@ int			main(int argc, char **argv)
 	ptr_check = &check;
 	if (argc == 10)
 	{
-		ft_parse_sudoku_table(orig, &argv[1]);
-		if (ft_parse_sudoku_table(pos, &argv[1]))
+		jp_parse_sudoku_table(orig, &argv[1]);
+		if (jp_parse_sudoku_table(pos, &argv[1]))
 		{
-			ft_solve(pos, 0, orig, ptr_check);
+			jp_solve(pos, 0, orig, ptr_check);
 			if (check == 1)
-				ft_print_sudoku(orig);
+				jp_print_sudoku(orig);
 			else
 				write(1, "Erreur\n", 7);
 		}

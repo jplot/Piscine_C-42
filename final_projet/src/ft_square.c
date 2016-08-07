@@ -105,7 +105,7 @@ int		bsq(char *map)
 	t_bsq	a;
 	t_obj	b;
 
-	ft_putstr("test");
+	jp_putstr("test");
 	a.map = map;
 	a.columns = calc_columns(map);
 	a.position = 0;
@@ -113,6 +113,6 @@ int		bsq(char *map)
 	b.empty = '.';
 	b.obstacle = 'o';
 	b.wall = 'x';
-	ft_putstr(calc_square(a, b));
+	jp_putstr(calc_square(a, b));
 	return (1);
 }

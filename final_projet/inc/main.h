@@ -21,9 +21,9 @@
 # include "ft_list.h"
 # include "ft_square.h"
 
-char	*ft_ltos(int len, t_list *list);
-char	*ft_read_standard(void);
-char	*ft_openfile(char *filename);
-void	ft_check(char *str);
+char	*jp_ltos(int len, t_list *list);
+char	*jp_read_standard(void);
+char	*jp_openfile(char *filename);
+void	jp_check(char *str);
 
 #endif

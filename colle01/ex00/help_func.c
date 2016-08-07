@@ -12,12 +12,12 @@
 
 #include <unistd.h>
 
-void		ft_putchar(char c)
+void		jp_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-int			ft_parse_sudoku_table(int pos[9][9], char **argv)
+int			jp_parse_sudoku_table(int pos[9][9], char **argv)
 {
 	int		ix;
 	int		iy;
@@ -43,7 +43,7 @@ int			ft_parse_sudoku_table(int pos[9][9], char **argv)
 	return (1);
 }
 
-void		ft_print_sudoku(int pos[9][9])
+void		jp_print_sudoku(int pos[9][9])
 {
 	int		i;
 	int		j;
@@ -54,17 +54,17 @@ void		ft_print_sudoku(int pos[9][9])
 		j = 0;
 		while (j < 9)
 		{
-			ft_putchar(pos[i][j] + 48);
+			jp_putchar(pos[i][j] + 48);
 			if (j != 8)
-				ft_putchar(' ');
+				jp_putchar(' ');
 			j++;
 		}
-		ft_putchar('\n');
+		jp_putchar('\n');
 		i++;
 	}
 }
 
-void		ft_set_pos(int *pos, int *orig, int i, int check)
+void		jp_set_pos(int *pos, int *orig, int i, int check)
 {
 	*pos = i;
 	if (check == 0)

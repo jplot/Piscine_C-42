@@ -12,30 +12,30 @@
 
 #include "ft_print.h"
 
-void	ft_putchar(char c)
+void	jp_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putnbr(int nbr)
+void	jp_putnbr(int nbr)
 {
 	if (nbr >= 10)
 	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
+		jp_putnbr(nbr / 10);
+		jp_putnbr(nbr % 10);
 	}
 	else
 	{
-		ft_putchar(nbr + '0');
+		jp_putchar(nbr + '0');
 	}
 }
 
-void	ft_putstr(char *str)
+void	jp_putstr(char *str)
 {
-	write(1, &str[0], ft_strlen(str));
+	write(1, &str[0], jp_strlen(str));
 }
 
-void	ft_puterr(char *str)
+void	jp_puterr(char *str)
 {
-	write(2, &str[0], ft_strlen(str));
+	write(2, &str[0], jp_strlen(str));
 }

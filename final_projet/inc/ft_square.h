@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SQUARE_H
-# define FT_SQUARE_H
+#ifndef JP_SQUARE_H
+# define JP_SQUARE_H
 
 # include <stdlib.h>
 # include "ft_print.h"
